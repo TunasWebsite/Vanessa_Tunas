@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cluster Amaryllis - Tunas Regency</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #198754;
+      padding: 1em 1em;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0.5em 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      margin-top: 0.5em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+
+    /* Layout gambar dan teks */
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em; /* Mengurangi jarak antara gambar */
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 2em;
+    }
+
+    .info img {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .info .type-img {
+      width: 180px; /* Lebar untuk gambar Type */
+    }
+
+    .info .denah-img {
+      width: 300px; /* Lebar untuk gambar Denah */
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2em;
+      color: #0D6EFD;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+      margin-top: 4em;
+    }
+
+    footer p {
+      margin: 0.3em 0;
+    }
+
+    footer a {
+      color: #0D6EFD;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* CSS untuk Slick Carousel */
+    .slider img {
+      width: 100%;
+      max-width: 400px; /* Menyamakan batas lebar gambar di slider */
+      margin: 0 auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* CSS untuk mengatur ukuran video */
+    video {
+      width: 80%; /* Mengurangi lebar video menjadi 80% dari kontainer */
+      max-width: 800px; /* Membatasi lebar maksimal */
+      height: 350px; /* Mengurangi tinggi video */
+      object-fit: cover; /* Menjaga tampilan video agar tetap terjaga */
+      display: block; /* Menjadikan video sebagai elemen block */
+      margin: 20px auto; /* Menjaga jarak dan memusatkan video */
+    }
+
+    @media (max-width: 600px) {
+      .info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .info img {
+        max-width: 80%; /* Ukuran gambar lebih kecil pada perangkat mobile */
+      }
+
+      .slider img {
+        width: 100%;  /* Gambar lebih kecil di perangkat mobile */
+      }
+
+      /* Video di perangkat mobile */
+      video {
+        width: 100%; /* Menyesuaikan lebar video dengan perangkat mobile */
+        max-width: none; /* Hapus batasan lebar */
+        height: auto; /* Sesuaikan tinggi video dengan rasio */
+      }
+    }
+
+    /* Mengubah urutan header */
+    header .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header nav {
+      margin-bottom: 1em; /* Memberikan jarak setelah menu */
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+
+    .whatsapp-float i {
+      margin-top: 15px;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+    }
+
+  </style>
+
+  <!-- Link CSS Slick Carousel -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#cluster">Cluster</a>
+        <a href="index.html#Fasilitas">Fasilitas</a>
+        <a href="contact.html">Contact us</a>
+      </nav>
+      <h1>Cluster Amaryllis</h1>
+    </div>
+  </header>
+
+  <!-- Type 43 -->
+  <h2>Type 43</h2>
+  <div class="info">
+    <img class="denah-img" src="unit amaryllis/Denah T43.jpg" alt="Denah T43">
+    <img class="type-img" src="unit amaryllis/tipe 43.jpg" alt="Type 43">
+  </div>
+
+  <!-- Type 55 -->
+  <h2>Type 55</h2>
+  <div class="info">
+    <img class="denah-img" src="unit amaryllis/Denah T55.jpg" alt="Denah T55">
+    <img class="type-img" src="unit amaryllis/tipe 55.jpg" alt="Type T55">
+  </div>
+
+  <!-- Type 69 -->
+  <h2>Type 69</h2>
+  <div class="info">
+    <img class="denah-img" src="unit amaryllis/Denah T69.jpg" alt="Denah T69">
+    <img class="type-img" src="unit amaryllis/tipe 69.jpg" alt="Type T69">
+  </div>
+
+  <!-- Gambar Slide di bawah Type 45 -->
+  <h2>Cluster Amaryllis</h2>
+  <div class="slider">
+    <div><img src="unit amaryllis/foto1.jpg" alt="Foto 1"></div>
+    <div><img src="unit amaryllis/foto2.jpg" alt="Foto 2"></div>
+    <div><img src="unit amaryllis/foto3.jpg" alt="Foto 3"></div>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6282172406158?text=Halo%20saya%20tertarik%20dengan%20Tunas%20Regency" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>Tunas Regency</p>
+    <p>Jl. Brigjend Katamso Komplek Tunas Regency</p>
+    <p>Sagulung, Kota Batam - Kepulauan Riau, Indonesia</p>
+    <p><a href="https://wa.me/082172406158" target="_blank">WhatsApp = 082172406158</a></p>
+    <p><a href="https://instagram.com/Vanessa_tunasregency" target="_blank">Instagram @Vanessa_tunasregency</a></p>
+    <p><a href="https://tiktok.com/@vane.chrisie" target="_blank">Tiktok @vane.chrisie</a></p>
+  </footer>
+
+  <!-- Link JS Slick Carousel dan jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- Script untuk Slick Carousel -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider').slick({
+        infinite: true,          // Mengaktifkan pengulangan otomatis
+        slidesToShow: 1,         // Menampilkan satu gambar per slide
+        slidesToScroll: 1,       // Menggeser satu gambar per scroll
+        autoplay: true,          // Mengaktifkan autoplay
+        autoplaySpeed: 2000,     // Kecepatan autoplay dalam milidetik
+        dots: true,              // Menampilkan dot navigasi
+        arrows: true,            // Menampilkan tombol navigasi
+      });
+    });
+  </script>
+
+</body>
+</html>

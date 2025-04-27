@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tunas Regency Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #0D6EFD;
+      --secondary-color: #e9f7ef;
+      --text-color: #000;
+      --accent-color: #198754;
+      --feature-bg-color: #d1f1d6;
+      --hover-color: #a3e635;
+      --hover-text: #14532d;
+      --card-bg: #f0fdf4;
+      --hover-green: #d4f8d4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    nav {
+      background-color: var(--accent-color);
+      padding: 0.5em 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--hover-color);
+      color: var(--hover-text);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header {
+      background :white url(logo/tunas.jpg) no-repeat center center;
+      background-size: contain;
+      height: 30vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    section {
+      padding: 4em 1em;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .boxed-title {
+      display: inline-block;
+      padding: 0.5em 1em;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 1em;
+      text-align: center;
+      font-size: 1.5em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .unit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+    }
+
+    .unit a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      padding: 0.5em;
+      border-radius: 10px;
+      background-color: var(--card-bg);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .unit a:hover {
+      background-color: var(--hover-green);
+      color: var(--hover-text);
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .unit img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .unit img:hover {
+      transform: scale(1.03);
+    }
+
+    .fasilitas img {
+      width: 100%;
+      height: auto;
+      max-width: 220px; 
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+
+    .fasilitas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2em;
+      max-width: 800px;
+      margin: auto;
+      padding-top: 1em;
+    }
+
+    .fasilitas-item {
+      text-align: center;
+    }
+
+    .fasilitas-item img {
+      width: 100%;
+      max-width: 280px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: auto;
+      display: block;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .fasilitas-item p {
+      margin-top: 0.5em;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+
+    .whatsapp-btn {
+      background-color: #25D366; /* warna hijau khas WA */
+      color: white;
+      padding: 0.8em 2em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+    }
+
+    @media(max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      .flex-container {
+        flex-direction: column;
+      }
+
+      .unit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 2em;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .content-box {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#cluster">Cluster</a></li>
+    <li><a href="#Fasilitas">Fasilitas</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+</header>
+
+<!-- SECTION WELCOME + GALLERY -->
+<section class="flex-container">
+  <div class="content-box">
+    <h2 class="boxed-title">Welcome to Tunas Regency</h2>
+    <p class="fade-in" style="font-size: 1.15em; line-height: 1.8; max-width: 700px; margin-bottom: 2em; text-align: justify;">
+      <strong>Solusi Hunian & Usaha Terbaik untuk Masa Depan Anda</strong><br><br>
+      Sedang mencari rumah nyaman, ruko strategis, atau gudang yang luas dan aman?<br><br>
+      Kami hadir untuk membantu Anda mewujudkannya.<br><br>
+      Beragam pilihan properti terbaik tersedia untuk kebutuhan pribadi maupun bisnis—mulai dari hunian keluarga, tempat usaha yang menjanjikan, hingga gudang dengan lokasi yang mudah diakses.<br><br>
+      Yuk, wujudkan rencana masa depan Anda bersama kami, dengan proses yang mudah dan penawaran menarik!
+    </p>
+    
+  </div>
+
+  <div style="flex: 2 1 500px;">
+    <div class="gallery">
+      <img src="gallery/Galeri1.jpg" alt="Galeri 1">
+      <img src="gallery/Galeri2.jpg" alt="Galeri 2">
+      <img src="gallery/Galeri3.jpg" alt="Galeri 3">
+      <img src="gallery/Galeri6.jpg" alt="Galeri 4">
+    </div>
+  </div>
+</section>
+
+<!-- SECTION CLUSTER -->
+<section id="cluster">
+  <h2 class="boxed-title" style="display: block; text-align: center;">Cluster</h2>
+  <div class="unit-grid">
+    <div class="unit">
+      <a href="cluster orchid.html">
+        <img src="unit/Orchid.jpg" alt="Cluster Orchid">
+        <h3>Cluster Orchid</h3>
+      </a>
+    </div>
+    <div class="unit">
+      <a href="Cluster lavender.html">
+        <img src="unit/Lavender.jpg" alt="Cluster Lavender">
+        <h3>Cluster Lavender</h3>
+      </a>
+    </div>
+    <div class="unit">
+      <a href="Cluster Jasmine.html">
+        <img src="unit/Jasmine.jpg" alt="Cluster Jasmine">
+        <h3>Cluster Jasmine</h3>
+      </a>
+    </div>
+    <div class="unit">
+      <a href="Cluster Amaryllis.html">
+        <img src="unit/Amaryllis.jpg" alt="Cluster Amaryllis">
+        <h3>Cluster Amaryllis</h3>
+      </a>
+    </div>
+    <div class="unit">
+      <a href="Ruko.html">
+        <img src="unit/Ruko.jpeg" alt="Ruko">
+        <h3>Ruko</h3>
+      </a>
+    </div>
+    <div class="unit">
+      <a href="Gudang.html">
+        <img src="unit/Gudang.jpg" alt="Gudang">
+        <h3>Gudang</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION FASILITAS -->
+<section id="Fasilitas">
+  <h2 class="boxed-title" style="display: block; text-align: center;">Fasilitas</h2>
+  <p style="max-width: 800px; margin: 1em auto; text-align: center; background-color: var(--card-bg); padding: 1.5em; border-radius: 10px;">
+    Fasilitas umum yang ada di Tunas Regency:
+  </p>
+  
+  <div class="fasilitas-grid">
+    <div class="fasilitas-item">
+      <img src="fasilitas/100.png" alt="Plaza Top 100 regency">
+      <p>Plaza Top 100</p>
+    </div>
+    <div class="fasilitas-item">
+      <img src="fasilitas/Ch.jpeg" alt="Club House">
+      <p>Club House</p>
+    </div>
+    <div class="fasilitas-item">
+      <img src="fasilitas/Masjid.jpg" alt="Tempat Ibadah">
+      <p>Tempat Ibadah</p>
+    </div>
+    <div class="fasilitas-item">
+      <img src="fasilitas/Sekolah.jpg" alt="Sekolah">
+      <p>Sekolah</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECTION LOKASI -->
+<section>
+  <h2 class="boxed-title" style="display: block; text-align: center;">Lokasi</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.150246993802!2d103.9337453!3d1.0485259999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98d3f1c7636a5%3A0xc72fb1f57f59d538!2sPT.%20Glory%20Propertindo!5e0!3m2!1sid!2sid!4v1745649351623!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>></iframe>
+  
+</section>
+
+<!-- SECTION KONTAK -->
+<section>
+  <h2 class="boxed-title" style="display: block; text-align: center;">Hubungi Kami</h2>
+  <div style="text-align: center; margin-top: 1.5em;">
+    <a class="whatsapp-btn" href="https://wa.me/6282172406158?text=Halo%20saya%20tertarik%20dengan%20Tunas%20Regency" target="_blank">
+      <i class="fab fa-whatsapp"></i>Vanessa Tunas Regency
+    </a>
+    
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Tunas Regency</p>
+  <p>Jl. Brigjend Katamso, Komplek Tunas Regency</p>
+  <p>Sagulung, Kota Batam - Kepulauan Riau, Indonesia</p>
+  <p><a href="https://wa.me/082172406158" target="_blank">WhatsApp: 082172406158</a></p>
+  <p><a href="https://instagram.com/Vanessa_tunasregency" target="_blank">Instagram: @Vanessa_tunasregency</a></p>
+  <p><a href="https://tiktok.com/@vane.chrisie" target="_blank">Tiktok: @vane.chrisie</a></p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fadeEls = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
+
+
+</body>
+</html>
